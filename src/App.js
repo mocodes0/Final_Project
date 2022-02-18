@@ -1,7 +1,9 @@
-import React from 'react';
-import './App.css';
-import Header from './Header';
-import Home from './Home';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./Header";
+import Home from "./Home";
+
 
 function App() {
   useEffect(() => {
@@ -27,12 +29,16 @@ function App() {
     });
   }, []);
   return (
-    // BEM
-    <div className="App">
-      <Header/>
-      <Home/>
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route path="/">
+          <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
-
 export default App;
