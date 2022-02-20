@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import Checkout from "./Checkout";
+import Login from "./Login";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
 
 function App() {
   useEffect(() => {
@@ -15,13 +18,13 @@ function App() {
       if (authUser) {
         // the user just logged in / the user was logged in
 
-        dispatch({
+        dispatchEvent({
           type: "SET_USER",
           user: authUser,
         });
       } else {
         // the user is logged out
-        dispatch({
+        dispatchEvent({
           type: "SET_USER",
           user: null,
         });
@@ -34,6 +37,9 @@ function App() {
         <Header />
 
         <Switch>
+        <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/Checkout">
             <Checkout />
           </Route>
