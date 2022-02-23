@@ -9,63 +9,11 @@ import Payment from "./Payment";
 import Orders from "./Orders";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
-<<<<<<< HEAD
-import Payment from "./Payment";
-
-function App() {
-  useEffect(() => {
-    // will only run once when the app component loads...
-
-    auth.onAuthStateChanged((authUser) => {
-      console.log("THE USER IS >>> ", authUser);
-
-      if (authUser) {
-        // the user just logged in / the user was logged in
-
-        dispatchEvent({
-          type: "SET_USER",
-          user: authUser,
-        });
-      } else {
-        // the user is logged out
-        dispatchEvent({
-          type: "SET_USER",
-          user: null,
-        });
-      }
-    });
-  }, []);
-  return (
-    <Router>
-      <div className="app">
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>
-          <Route path="/payment">
-            <Header />
-            <Payment />
-          </Route>
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-export default App;
-=======
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 const promise = loadStripe(
-  "pk_test_51KVO2YH239XntwUktyxZJcT11A6RracgQDrFMag9nacwuWBgP5vI6gYnbbiayloThDGkzEpcCTAnsBDSY1AtJBno00ZUSdFYRB"
+  "pk_test_51KVrlKFYpbTkTYB0cHEG88jPb7zLjsMhwCr4Oo6FtFXBMEgo172YdFMhFqcW5SIW6fLs1O8uFOGTyJAARMLJJnUY00aC55cqeL"
   );
   function App() {
     const [{}, dispatch] = useStateValue();
@@ -125,4 +73,3 @@ const promise = loadStripe(
   }
   
   export default App;
->>>>>>> PaymentProcessing

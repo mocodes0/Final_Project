@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import { useStateValue } from "./StateProvider";
-import CheckoutProduct from "./CheckoutProduct";
-import "./Payment.css";
-import { Link } from "react-router-dom";
-
-function Payment() {
-  const [{ basket, user }, dispatch] = useStateValue();
-=======
 import React, { useState, useEffect } from 'react';
 import './Payment.css';
 import { useStateValue } from "./StateProvider";
@@ -51,9 +41,17 @@ function Payment() {
 
   const handleSubmit = async (event) => {
     // do all the fancy stripe stuff...
+    console.log(basket);
     event.preventDefault();
     setProcessing(true);
+        //the below is extra
 
+    dispatch({
+      type: "EMPTY_BASKET",
+    });
+
+    history.replace("/orders");
+    //the above is extra
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
@@ -62,7 +60,7 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
-
+        console.log('here')
         db.collection("users")
           .doc(user?.uid)
           .collection("orders")
@@ -91,7 +89,6 @@ function Payment() {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
->>>>>>> PaymentProcessing
 
   return (
     <div className="payment">
@@ -100,11 +97,7 @@ function Payment() {
           Checkout (<Link to="/checkout">{basket?.length} items</Link>)
         </h1>
 
-<<<<<<< HEAD
-        {/* PAyment section- delivery address */}
-=======
         {/* Payment section- delivery address */}
->>>>>>> PaymentProcessing
         <div className="payment-section">
           <div className="payment-title">
             <h3>Delivery Address</h3>
@@ -139,9 +132,6 @@ function Payment() {
           <div className="payment-title">
             <h3>Payment Method</h3>
           </div>
-<<<<<<< HEAD
-          <div className="payment-details">{/* Stripe magic will go */}</div>
-=======
           <div className="payment-details">
             {/* Stripe magic will go */}
 
@@ -157,7 +147,7 @@ function Payment() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-                <button disabled={processing || disabled || succeeded}>
+                <button onClick={handleSubmit} className=""disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
@@ -166,7 +156,6 @@ function Payment() {
               {error && <div>{error}</div>}
             </form>
           </div>
->>>>>>> PaymentProcessing
         </div>
       </div>
     </div>
