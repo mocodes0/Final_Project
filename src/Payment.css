@@ -23,17 +23,12 @@
 
 .payment-title {
   flex: 0.2;
-<<<<<<< HEAD
-=======
   padding-right: 20px;
->>>>>>> PaymentProcessing
 }
 
 .payment-address, .payment-items, .payment-details {
   flex: 0.8;
 }
-<<<<<<< HEAD
-=======
 
 .payment-details > form {
   max-width: 400px;
@@ -60,4 +55,3 @@
   display: grid;
   }
 }
->>>>>>> PaymentProcessing
