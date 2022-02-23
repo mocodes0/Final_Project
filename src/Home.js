@@ -1,15 +1,22 @@
 import React from "react";
 import "./Home.css";
 import Product from "./Product";
-
+import Video from "./video.mp4"
 function Home() {
   return (
     <div className="home">
       <div className="home-container">
-        <img
+        <video autoPlay loop muted
+        style= {{
+          position: "inherit",
+          width: "100%",
+          height: "5%",
+          objectFit: "cover",
+          transform: "translateX(-50%, -50%)",
+          zIndex: "1000"
+        }}
           className="home-image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt=""
+          src={Video} type="video/mp4"
         />
 
         <div className="home-row">

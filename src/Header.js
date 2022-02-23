@@ -20,7 +20,7 @@ function Header() {
       <Link to="/">
         <img
           className="header__logo"
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          src="https://imagizer.imageshack.com/img923/7646/kQ4DaS.png"
         />
       </Link>
 
@@ -49,7 +49,7 @@ function Header() {
 
         <div className="header__option">
           <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime</span>
+          <span className="header__optionLineTwo">X Account</span>
         </div>
 
         <Link to="/checkout">
