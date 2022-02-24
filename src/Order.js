@@ -9,7 +9,7 @@ function Order({ order }) {
   
   return (
     <div className="order">
-      <h2>Order</h2>
+      <h2>Order Information </h2>
       <p className="order-id">
         <small>{order.id}</small>
       </p>

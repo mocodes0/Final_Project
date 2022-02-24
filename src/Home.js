@@ -10,7 +10,7 @@ function Home() {
         style= {{
           position: "inherit",
           width: "100%",
-          height: "5%",
+          height: "11%",
           objectFit: "cover",
           transform: "translateX(-50%, -50%)",
           zIndex: "1000"
