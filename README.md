@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# X- Marketplace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+X- Marketplace is an Amazon Clone (Full E-Commerce App) using Express, React, Node & Cloud Firestore. Payment Functionality with Stripe, Login Functionality with Firebase Authentication, Deployment with Firebase Hosting. Happy Shopping!
+
+![](https://github.com/mocodes0/X-Marketplace/blob/main/images/X-Marketplace%20Demo.gif)
+
+
+# Getting Started with X- Marketplace
+
 
 ## Available Scripts
 
